@@ -39,13 +39,13 @@ public class userController {
   }
 
   @DeleteMapping("/{id}")
-  public String removeUser(Integer id) {
+  public String removeUser(@PathVariable Integer id) {
     userService.removeUser(id);
     return "User with id " + id + " removed sucessfully.";
   }
 
   @PutMapping("/{id}")
-  public User updateUser(User user) {
+  public User updateUser(@RequestBody User user) {
     return userService.updateUser(user);
   }
 
